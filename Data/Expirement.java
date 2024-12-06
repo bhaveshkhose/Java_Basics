@@ -30,13 +30,17 @@ public class Expirement {
 //		}
 //		System.out.println(sum);
 //		
-		if(2+3>4) {
-			System.out.println("false");
-		}
+		int n = 30;
 		
-		
+		   int zeroes = 0;
+	       while(n >= 5){
+	        n/= 5;
+	        zeroes += n;
+	       }
+
+	   System.out.println(zeroes);
+	
+	
 	}
-	
-	
 	
 }
