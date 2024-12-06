@@ -19,9 +19,6 @@ public class Expirement {
 //		{
 //			pri += arr[i][i];
 //			sec +=arr[i][n-i-1];
-//			
-//			
-//			
 //		}
 //		int sum=0;
 //		

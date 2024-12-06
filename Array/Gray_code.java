@@ -35,16 +35,19 @@ public class Gray_code {
 //		char[] c = t.toCharArray();
 //		System.out.println(c[0]);
 		
-		String str = "I am Bhavesh";
-		String[] strarr = str.trim().split("\\str+");
+		// String str = "I am Bhavesh";
+		// String[] strarr = str.trim().split("\\str+");
 		
-		System.out.println(strarr.length);
-		System.out.println(strarr[0]);
-		for(String s : strarr) {
-			System.out.print(s);
-		}
-		String s= String.join(" ", strarr);
-		System.out.println("\n"+s);
+		// System.out.println(strarr.length);
+		// System.out.println(strarr[0]);
+		// for(String s : strarr) {
+		// 	System.out.print(s);
+		// }
+		// String s= String.join(" ", strarr);
+		// System.out.println("\n"+s);
+
+		System.out.println("Bhavesh khose");
+		
 		
 		
 	
