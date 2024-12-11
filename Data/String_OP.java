@@ -33,19 +33,20 @@ public class String_OP{
 }
 	
 	public  static void main(String[] args) {
-		String_OP str1 = new String_OP();
-		String_OP str2 = new String_OP();
+		String s1 = "7";
+		String s2 = "12";
 		
+		int a =Integer.parseInt(s1);
+		int b = Integer.parseInt(s2);
 		
-		System.out.println(str1.String_To_Integer("        2838"));
-		System.out.println(str2.Int_To_String(2763));
+		int c = a*b;
+		System.out.println(c);
 		
-	}
-	
-	public long Int_To_String(int num)
-	{
-		long number = Integer.BYTES;
-		return number;
+		String str = Integer.toString(c);
+		System.out.println(str);
+		
+		Long.p
+		
 		
 	}
 

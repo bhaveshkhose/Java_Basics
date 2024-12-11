@@ -75,18 +75,38 @@ class Solution {
 	
 	public  static void  main(String [] args) {
 		
-		
-//		String str = "2";
-//		String str1 = "3";
-//		int a = Integer.parseInt(str);
-//		int b = Integer.parseInt(str1);
-//		System.out.println(a+b);
-		
-		int[] arr  = {1,2,3,4,5};
-		
-		
-		
+		int[] arr = {0,1,1,1,0,1,1,0,1};
+		int i = Solution.longestSubarray(arr);
+		System.out.println(i);
 	}
+		
+		
+		public static int longestSubarray(int[] nums) {
+	        
+	        //Sitting the boundaries for the silding the window
+	        int maxlen =0;
+	        int left = 0;
+	        int count =0 ;
+
+	        for(int i = 0 ; i < nums.length ; i++ ){
+	            
+	            if(nums[i] == 0){
+	                count++;
+	            }
+	            while( count > 1 ){
+	                if(nums[left] == 0){
+	                    count --;
+	                }
+	                left++;
+	            }
+
+	            maxlen = Math.max(maxlen , i - left);
+	        }
+	       return maxlen; 
+	    }
+		
+		
+	
 	public static boolean isPerfectSquare(int num) {
 
         int left=1;
