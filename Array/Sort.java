@@ -1,6 +1,10 @@
 package Array;
 
 public class Sort {
+
+	public Sort(String s){
+		System.out.println(s);
+	}
 	
 	public static void main(String[] args) {
 //		System.out.println("Bhavesh");
@@ -8,17 +12,7 @@ public class Sort {
 //		System.out.println(s);
 //		System.out.println(s.trim().toLowerCase().replaceAll("[^a-z-0-9]", ""));
 //		
-		int[] nums = {0,0,1,1,0,1,1,0,0,0,1};
-		int right =0;
-		int zerocount =0;
-		while(nums[right] == 1) {
-			
-			if(nums[right ] == 0)
-				{
-					System.out.println(zerocount++);
-				}
-			right++;	
-		}
+		System.out.println("Bhavesh is a coder");
 		
 		
 		

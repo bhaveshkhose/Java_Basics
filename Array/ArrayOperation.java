@@ -95,18 +95,6 @@ public class ArrayOperation {
 		System.out.println(binarySearch(array, 5));
 		System.out.println(arr.hashCode());
 
-	   
-		
-	
-		
-	   	   
-		
-		
-		
-		
-		
-				
-		
 	}
 
 }

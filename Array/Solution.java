@@ -1,5 +1,5 @@
 package Array;
-import java.util.Stack;
+import java.util.*;
 
 class Solution {
 	
@@ -75,9 +75,34 @@ class Solution {
 	
 	public  static void  main(String [] args) {
 		
-		int[] arr = {0,1,1,1,0,1,1,0,1};
-		int i = Solution.longestSubarray(arr);
-		System.out.println(i);
+		
+		
+//		ArrayList<Integer> list = new ArrayList<>();
+//		Scanner sc = new Scanner(System.in);
+//		list.add(3);
+//		list.add(4);
+//		list.add(5);
+//		System.out.println(list.contains(5));
+//		System.out.println("Enter the number of elements ");
+//		int num = sc.nextInt();
+//		for(int i  =0; i < num ; i++);
+//		{
+//			
+//		}
+		
+		ArrayList<Integer> set = new ArrayList<>();
+		set.add(5);
+		set.add(18);
+		set.add(7);
+		
+		
+		Random rn = new Random();
+		int idx = rn.nextInt(set.size());
+		System.out.println(set.get(idx));
+		
+		System.out.println("bhavesh khose");
+		
+				
 	}
 		
 		
@@ -128,8 +153,7 @@ class Solution {
             }
         }
         return false;
-
-        
-        
+    
     }
+	
 }
