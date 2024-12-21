@@ -3,15 +3,22 @@ package DSA;
 public class Recursion {
 	
 	// Method of printing name 5 times using recursion
-	
-	public static void printName(String name , int  n) {
+	public static String printName(String name , int  n) {
 		
-		if(n == 0) return ;
-		
-	
+		if(n == 0) return null ;
 		System.out.println(name );
-		printName(name, n -1);
+		return printName(name, n -1);
 	}
+
+	//Method to print the sum of the n number 
+	public static int printSum(int n){
+		if(n == 0)return 0;
+
+		return n + printSum(n -1);
+	}
+
+	//Method 
+
 	
 	// Method for printing the table of number
 	public static void tableOfTwo(int num , int to) {
@@ -31,19 +38,18 @@ public class Recursion {
 	//Method to print the factorial of number
 	public static int facto(int num) {
 		if(num == 0 || num ==1)return num;
+	
 		
-		return num * facto(num -1);
-		
-		
-		
-				
+		return num * facto(num -1);			
 	}
 	public static void main(String [] args) {
-		printName("Bhavesh" , 5);
-		tableOfTwo(8 ,1);
-		printNtoN(1,10);
-		int x = facto(4);
-		System.out.println(x);
+		// printName("Bhavesh" , 5);
+		// tableOfTwo(8 ,1);
+		// printNtoN(1,10);
+		// int x = facto(4);
+		// System.out.println(x);
+
+		System.out.println(printSum(5));
 		
 	}
 
