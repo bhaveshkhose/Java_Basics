@@ -1,10 +1,8 @@
 package DSA;
-import java.lang.Math;
+
 public class DoublyLL {
 	
 	Node head;
-	
-	
 	public void add(int data) {
 		Node newNode = new Node(data);
 		Node current = head;
@@ -31,9 +29,7 @@ public class DoublyLL {
 		Node d = new Node(9);
 		Node e = new Node(2);
 		Node f= new Node(49);
-		
-		Math.s
-		
+
 		a.prev=null;
 		a.next= b;
 		b.prev= a;

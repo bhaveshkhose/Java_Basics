@@ -74,32 +74,39 @@ public class Exception1 {
 	
 	public static void main(String [] args) throws CustomExcep3{
 		
-		M1();
+// 		M1();
 		
 		
+// 		}
+// 	static void M1() {
+// 		System.out.println("Enter in M1");
+// 		M2();
+// 		System.out.println("Exited form M!");
+		
+// 	}
+// 	static void M2() {
+// 		System.out.println("Enter in M2");
+// 		try {
+// 			M3();
+// 		}
+// 		catch(Exception e) {
+// 			System.out.println("b")
+// ;		}
+// 		System.out.println("Exited form M2");
+		
+// 	}
+// 	static void M3() {
+// 	int a = 10 , b =0 ;
+// 	int c = a/b;
+// 	System.out.println(c);
+// 	}
+
+		int x =0;
+		while(x<5){
+			System.out.println(x);
+			x++;
 		}
-	static void M1() {
-		System.out.println("Enter in M1");
-		M2();
-		System.out.println("Exited form M!");
-		
-	}
-	static void M2() {
-		System.out.println("Enter in M2");
-		try {
-			M3();
-		}
-		catch(Exception e) {
-			System.out.println("b")
-;		}
-		System.out.println("Exited form M2");
-		
-	}
-	static void M3() {
-	int a = 10 , b =0 ;
-	int c = a/b;
-	System.out.println(c);
-	}
+
 		
 			
 		
@@ -107,4 +114,5 @@ public class Exception1 {
 	
 	
 	}
+}
 

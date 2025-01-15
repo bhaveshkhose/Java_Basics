@@ -3,43 +3,44 @@ import java.io.*;
 
 public class Writing_data {
 	
-	public static void  main(String  args[]) throws IOException {
-		File f = new File("out.txt");		
-		byte[] b= {(byte)'b' , (byte)'h', (byte)'a',(byte)'v', (byte)'e', (byte)'s', (byte)'h',(byte)'s'};
-		// For Writing the data
-		if(!f.exists()) {
-			System.out.println("out.txt "+" is a new file");
+	public static void main(String  args[]) throws IOException  {
+		//Write to a file
+		String filePath = "in.txt";
+		String content = "Hello \n";
+
+		try(FileWriter writer = new FileWriter(filePath)){
+			writer.write(content);
+			writer.write("\nHello my name is Bhavesh and I am a Software Engineer");
+			System.out.println("Data is Written Successfully");
 		}
-		else {
-			System.out.println("out.txt "+" this file is allready exists ");
+		catch(IOException e){
+			System.out.println("An error is occured");
+			e.printStackTrace();
 		}
-		File newfile = new File("In.txt");
-		FileWriter fw = new FileWriter(newfile);
-		fw.write("Bhavesh is a good coder");
+
+		FileReader rd = null;
+		try{
+			rd = new FileReader(filePath);
+		}
+		catch(IOException e){
+			System.out.println("File not found");
+		}
 			
-		
-		FileOutputStream fs = new FileOutputStream(f);
-		System.out.println("File is opened write the content");
-		fs.write(b);
-		fs.flush();
-		
-		System.out.println("File is cloesd");
-		fs.close();
-		
-		if(f.exists()) {
-			FileInputStream fi = new FileInputStream(f);
-			int n = fi.available();
-			byte[] c  = new byte[n]; 
-			int read = fi.read(c);
-			String str = new String(c);
-			System.out.println("Content of file is " + str);
-			fi.close();
-			f =null;
-			
+		//Read form a file 
+		BufferedReader reader  = new BufferedReader(rd);
+		try{
+			String line = reader.readLine();
+			while(line != null){
+				System.out.println(line);
+				line = reader.readLine();
+			}
 		}
-		else {
-			System.out.println("file is not eixts");
-			System.exit(0);
+		catch(IOException e){
+			System.out.println("An error is occured");
+			e.printStackTrace();
 		}
+		finally{
+			reader.close();
+		}		
 	}
 }

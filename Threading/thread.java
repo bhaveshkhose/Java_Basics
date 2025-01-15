@@ -70,12 +70,7 @@ public static void main(String [] a) {
 		System.out.println(tr.isAlive());
 		//System.out.println(Thread.getAllStackTraces());
 		System.out.println(tr.getPriority());
-		
-		
-		
-		
-		
-		
+	
 	}
 
 

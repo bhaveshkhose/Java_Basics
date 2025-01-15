@@ -80,29 +80,14 @@ class Stacky{
 
 public class StackUsingLinkedList {
 	
-public static void main(String [] args) {
+public static void main(String [] a) {
 	Stacky st = new Stacky();
 	st.push(10);
 	st.push(9);
 	st.push(8);
+	
 	st.push(7);
-	st.printStack(st.head);
-	
-	st.push(19);
-	st.printStack(st.head);
-	System.out.println(st.head.val);
-	System.out.println(st.isEmpty());
-	
-	st.pop();
-	st.pop();
-	st.pop();
-	st.printStack(st.head);
-	System.out.println(st.size());
-	
-	
+	st.printStack(st.head);	
 }
-	
-	
-	
 
 }

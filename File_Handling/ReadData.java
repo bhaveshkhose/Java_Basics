@@ -11,8 +11,6 @@ public class ReadData {
         while((character = rd.read()) != -1){
             System.out.print((char)character);
         }
-        
-
     }
     catch(IOException e){
         e.printStackTrace();
@@ -27,6 +25,5 @@ public class ReadData {
             e.printStackTrace();
         }
     }
-    }
-    
+    }  
 }
