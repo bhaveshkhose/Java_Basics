@@ -59,9 +59,10 @@ public class Tree_DS {
 	public static int maxNode(Node root){
 		
 		if(root == null){
-			return Integer.MIN_VALUE;
-		}
 
+			return Integer.MIN_VALUE;
+
+		}
 		int a = root.data;
 		int b  = maxNode(root.left);
 		int c = maxNode(root.right);
@@ -70,6 +71,19 @@ public class Tree_DS {
 		
 	}
 
+	//Method for find the minimum number from the tree
+	public static int minNode(Node root){
+		if(root == null){
+			return Integer.MAX_VALUE;
+		}
+
+		int a = root.data;
+		int b = minNode(root.left);
+		int c = minNode(root.right);
+
+		return Math.min(a , Math.min(c, b));
+
+	}
 	//Method for Finding the sum of the tree
 	public static int sumOfTree(Node root){
 		if(root == null){
@@ -78,6 +92,25 @@ public class Tree_DS {
 
 		int sum = root. data + sumOfTree(root.left) + sumOfTree(root.right);
 		return sum ;
+	}
+
+	//Method for finding the product of the node of the tree
+	public static int productOfTree(Node root){
+		if(root == null) return 1;
+
+		return root.data * productOfTree(root.left) * productOfTree(root.right);
+	}
+
+	//Method for finding the height of the tree
+	public static int treeHeight(Node root){
+		if(root == null)return 0;
+		if(root.right==null && root.left ==null)
+		{
+			return 0;
+		}
+		return 1+ Math.max(treeHeight(root.right ) , treeHeight(root.left));
+
+
 	}
 	
 	static class tree{
@@ -145,11 +178,17 @@ public class Tree_DS {
 
 		System.out.println(size(root));
 
-		int [] nums = {9,8,-1, 7,6,5,-1,4,3,2,1};
+		//int [] nums = {9,8,-1, 7,6,5,-1,4,3,2,1};
 
 		System.out.println("The maximum value of the tree is :- "+maxNode(root));
 
 		System.out.println("the sum of the tree is :=" +sumOfTree(root));
+
+		System.out.println("The height of the tree is :- "+treeHeight(root));
+
+		System.out.println("The product of the tree is :- "+productOfTree(root));
+
+		System.out.println("The minimum node value of the tree is :-" + minNode(root));
 
 	}
 }
