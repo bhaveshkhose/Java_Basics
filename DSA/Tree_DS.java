@@ -1,5 +1,9 @@
 package DSA;
+
 import java.lang.Math;
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class Tree_DS {
 	
 	static Node root;
@@ -16,6 +20,7 @@ public class Tree_DS {
 		}
 	}
 	 
+
 	//Method for print the tree in pre-order
 	public static void printTreePre(Node root) {
 			 if(root == null)return;
@@ -59,9 +64,7 @@ public class Tree_DS {
 	public static int maxNode(Node root){
 		
 		if(root == null){
-
 			return Integer.MIN_VALUE;
-
 		}
 		int a = root.data;
 		int b  = maxNode(root.left);
@@ -84,6 +87,7 @@ public class Tree_DS {
 		return Math.min(a , Math.min(c, b));
 
 	}
+	
 	//Method for Finding the sum of the tree
 	public static int sumOfTree(Node root){
 		if(root == null){
@@ -106,13 +110,58 @@ public class Tree_DS {
 		if(root == null)return 0;
 		if(root.right==null && root.left ==null)
 		{
-			return 0;
+			return 1;
 		}
 		return 1+ Math.max(treeHeight(root.right ) , treeHeight(root.left));
 
 
 	}
+
+	//Method for finding the depth of the tree
+	public static int treeDepth(Node root){
+		if(root == null)return 0;
+
+		int a = treeDepth(root.left);
+		int b = treeDepth(root.right);
+
+		return 1+ Math.max(a , b);
+
+	}
+
+	//Method for printing the level order of the tree
+	public static void levelOrderTraversal(Node root , int level){
+
+		if(root == null)return ;
+		if(level == 1) {
+			System.out.print(root.data+" ");
+			return;
+		}
+		levelOrderTraversal(root.left, level -1);
+		levelOrderTraversal(root.right, level -1);
+		return;
+
+	}
 	
+	//Method for traversing the tree using breadth first search(bfs)
+	public static void bfs(Node root){
+
+		Queue<Node> que = new LinkedList<>();
+
+		if(root != null) que.add(root) ;
+
+		while(que.size() > 0 ){
+			Node temp = que.peek();
+			que.add(temp);
+			if(temp.left != null ) que.add(temp.left);
+			if(temp.right != null) que.add(temp.right);
+
+			System.out.print(temp.data);
+
+			que.remove();
+		}
+
+
+	}
 	static class tree{
 		Node root;
 		static int idx = -1 ;
@@ -126,8 +175,6 @@ public class Tree_DS {
 				Node.root = newNode;
 				
 			}
-			
-			
 			return null;
 		}
 	}
@@ -145,6 +192,8 @@ public class Tree_DS {
 		Node i = new Node(9);
 		Node j = new Node(10);
 
+		int o = i.right.data;
+		System.out.println(o);
 		
 		root  =a  ;
 		a.left = b;
@@ -155,9 +204,9 @@ public class Tree_DS {
 		e.right = g;
 		f.right = i;
 		f.left = h;
-		i.right = j;
+		c.right = j;
 
-		System.out.println(d.left);
+	
 
 		
 		System.out.print("Tree traversing pre-order :- ");
@@ -186,9 +235,22 @@ public class Tree_DS {
 
 		System.out.println("The height of the tree is :- "+treeHeight(root));
 
+		System.out.println("The depth of the tree is :-" +treeDepth(root));
+
 		System.out.println("The product of the tree is :- "+productOfTree(root));
 
 		System.out.println("The minimum node value of the tree is :-" + minNode(root));
+
+		
+
+		for(int k = 1 ; k <=treeDepth(root) ; k ++ ){
+			levelOrderTraversal(root,k );
+
+			System.out.println();
+
+		}
+
+		bfs(root);
 
 	}
 }
