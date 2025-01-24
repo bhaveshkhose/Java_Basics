@@ -1,8 +1,7 @@
 package DSA;
 
 import java.lang.Math;
-import java.util.Queue;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Tree_DS {
 	
@@ -19,8 +18,6 @@ public class Tree_DS {
 			this.right = null;
 		}
 	}
-	 
-
 	//Method for print the tree in pre-order
 	public static void printTreePre(Node root) {
 			 if(root == null)return;
@@ -143,24 +140,84 @@ public class Tree_DS {
 	}
 	
 	//Method for traversing the tree using breadth first search(bfs)
-	public static void bfs(Node root){
+	public static void levelOrder(Node root) {
 
-		Queue<Node> que = new LinkedList<>();
+        if(root == null){
+            return ;
+        }
 
-		if(root != null) que.add(root) ;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
 
-		while(que.size() > 0 ){
-			Node temp = que.peek();
-			que.add(temp);
-			if(temp.left != null ) que.add(temp.left);
-			if(temp.right != null) que.add(temp.right);
+        while(!queue.isEmpty()){
+            int levelnum = queue.size();
+            
 
-			System.out.print(temp.data);
+            for(int i =0 ; i < levelnum ; i++){
+                Node currentNode = queue.poll();
+                System.out.print(currentNode.data+ " ");
 
-			que.remove();
+                if(currentNode.left != null){
+                    queue.add(currentNode.left);
+                }
+
+                
+                if(currentNode.right != null){
+                    queue.add(currentNode.right);
+                }
+            }
+            System.out.println();
+ 
+        } 
+
+        return ;
+        
+        
+    }
+
+	
+	//Method for printing the leaf nodes of the binary tree
+	public static void printLeaf(Node root , List<Integer> leaf){
+			if(root == null)return ;
+	
+			
+	
+			if(root.left == null && root.right == null){
+				leaf.add(root.data);
+			}
+	
+			printLeaf(root.left , leaf);
+			printLeaf(root.right , leaf);
+
+		return ;
+	}
+
+	//Method for finding the Node value in the tree
+	private static boolean searchNode(Node root , int val){
+        if(root == null ) return false;
+
+		if(root . data == val )return true;
+
+		return  searchNode(root.left, val)||
+		searchNode(root.right, val);
+    }
+
+	//Method for adding the Node to the tree
+	public static void addNode(int data , int rootSide){
+		
+		Node newNode = new Node(data);
+		if(root == null){
+			root = newNode;
 		}
-
-
+		else if(rootSide == 0){
+			System.out.println("null");
+		}
+		else if(rootSide == 1){
+			root.right = newNode;
+		}
+		else {
+			root.left = newNode;
+		}
 	}
 	static class tree{
 		Node root;
@@ -179,7 +236,8 @@ public class Tree_DS {
 		}
 	}
 	public static void main(String [] bhavesh) {
-		
+
+		Scanner sc = new Scanner(System.in);
 		
 		Node a = new Node(1);
 		Node b = new Node(2);
@@ -191,9 +249,6 @@ public class Tree_DS {
 		Node h = new Node(8);
 		Node i = new Node(9);
 		Node j = new Node(10);
-
-		int o = i.right.data;
-		System.out.println(o);
 		
 		root  =a  ;
 		a.left = b;
@@ -227,8 +282,6 @@ public class Tree_DS {
 
 		System.out.println(size(root));
 
-		//int [] nums = {9,8,-1, 7,6,5,-1,4,3,2,1};
-
 		System.out.println("The maximum value of the tree is :- "+maxNode(root));
 
 		System.out.println("the sum of the tree is :=" +sumOfTree(root));
@@ -249,8 +302,13 @@ public class Tree_DS {
 			System.out.println();
 
 		}
+		
+		
+		
+		levelOrder(root);
 
-		bfs(root);
+		
+
 
 	}
 }
